@@ -1,0 +1,22 @@
+# application.yml
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/iot_db
+    username: iot_user
+    password: secret
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 3000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+mqtt:
+  broker.url: tcp://localhost:1883
+  topic: ocs/telemetry
+  client-id: ocs-backend-01
